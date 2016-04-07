@@ -6,21 +6,21 @@
 function PageSlider(container) {
 
     var container = container,
-        currentPage,
-        stateHistory = [];
+            currentPage,
+            stateHistory = [];
 
     // Use this function if you want PageSlider to automatically determine the sliding direction based on the state history
     this.slidePage = function(page) {
 
         var l = stateHistory.length,
-            state = window.location.hash;
+                state = window.location.hash;
 
         if (l === 0) {
             stateHistory.push(state);
             this.slidePageFrom(page);
             return;
         }
-        if (state === stateHistory[l-2]) {
+        if (state === stateHistory[l - 2]) {
             stateHistory.pop();
             this.slidePageFrom(page, 'left');
         } else {
@@ -32,8 +32,8 @@ function PageSlider(container) {
 
     // Use this function directly if you want to control the sliding direction outside PageSlider
     this.slidePageFrom = function(page, from) {
-
-        container.append(page);
+if(currentPage)currentPage.css('display','none')
+page.css('display','')
 
         if (!currentPage || !from) {
             page.attr("class", "page center");
@@ -45,7 +45,7 @@ function PageSlider(container) {
         page.attr("class", "page " + from);
 
         currentPage.one('webkitTransitionEnd', function(e) {
-            $(e.target).remove();
+            //$(e.target).remove();
         });
 
         // Force reflow. More information here: http://www.phpied.com/rendering-repaint-reflowrelayout-restyle/

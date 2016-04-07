@@ -5,15 +5,608 @@
     <link rel="stylesheet" href="css/pageslider.css">
     <link rel="stylesheet" href="css/styles.css">
 </head>
-<body>
+<body class="ui-mobile-viewport ui-overlay-e"><div id="page_search_estab" data-role="page" data-control-title="BuscarEstabelecimentos" data-theme="e" data-url="page_search_estab" tabindex="0" class="ui-page ui-page-theme-e ui-page-header-fixed ui-page-active" style="padding-top: 42px; min-height: 861px;">
+    <div data-theme="a" data-role="header" data-position="fixed" data-tap-toggle="false" role="banner" class="ui-header ui-bar-a ui-header-fixed slidedown">
+        <h3 class="ui-title" role="heading" aria-level="1">
+            Me Pediu
+        </h3>
+    </div> 
+    <ul id="tabs_search_estab" style="position: relative; width: 100%; display: table; table-layout: fixed; border-collapse: collapse; font-size: 0px; padding: 0px; -webkit-user-select: none;">
+        <li id="tab1" style="display: table-cell; width: auto; font-size: 16px; text-align: center; line-height: 60px; position: relative; cursor: pointer;"><img data-img_src="imgs/icons/location.png" style="height:32px;vertical-align:middle" src="http://localhost/pedidos_dev/pedidos/mobile/mepediu_dev/../res/jqm/imgs/icons/location.png"><div id="D2C82F63-0C09-4257-9F3A-C0A83EC05240" style="display: table-cell; width: 100%; position: absolute; bottom: 0px; left: 0px; min-height: 4px; height: 4px; transition: all 0.3s; background: rgb(218, 68, 83);"></div></li>
+        <li id="tab2" style="display: table-cell; width: auto; font-size: 16px; text-align: center; line-height: 60px; position: relative; cursor: pointer;"><img data-img_src="imgs/icons/favorite.png" style="height:32px;vertical-align:middle" src="http://localhost/pedidos_dev/pedidos/mobile/mepediu_dev/../res/jqm/imgs/icons/favorite.png"></li>
+    </ul>
+    <div id="div_estab_search_origin" data-cp_fcall="changeSearchEstabOrigin"><table><tbody><tr><td width="99%" style="font-weight:bold"><span id="span_label_estab_entrega">Estabelecimentos próximos à você</span> : <br><span class="span_end">Vila Vera , São Paulo , SP</span></td><td width="1%" style="text-align: center;font-size:smaller;font-weight:bold;color:rgb(227, 9, 19)"><img src="http://localhost/pedidos_dev/pedidos/mobile/mepediu_dev/../res/jqm/imgs/icons/switch.png" style="height:50%">TROCAR</td></tr></tbody></table></div>
+    <div data-tabs_content="tab1">
+        <div id="div_estabs_search"><ul data-role="listview" data-inset="true" class="ui-listview ui-listview-inset ui-corner-all ui-shadow"><li data-cp_fcall="getEstabByUid(172257ED-7F0C-485C-A2D3-4A84F304A673)" class="ui-li-static ui-body-inherit ui-li-has-thumb ui-first-child"><img src="http://localhost/public_res/172257ED-7F0C-485C-A2D3-4A84F304A673/28dd5914-d3a1-1204-6904-2b6de8d2002c.png" style="padding:5px;height:90%"><h2>PANIFICADORA MARENGO</h2><table width="100%"><tbody><tr><td width="50%"><p>Panificadora</p></td><td><p><img src="http://localhost/pedidos_dev/pedidos/mobile/mepediu_dev/../res/jqm/imgs/icons/location.png" style="height:16px;padding-right:5px;vertical-align:middle">0.14 km</p></td></tr></tbody></table></li><li data-cp_fcall="getEstabByUid(18E2BDB9-CA50-43C1-B864-3834FBB918DB)" class="ui-li-static ui-body-inherit ui-li-has-thumb"><img src="http://localhost/public_res/18E2BDB9-CA50-43C1-B864-3834FBB918DB/5e5fe0b5-a154-91e4-2dcf-f2c778d45758.png" style="padding:5px;height:90%"><h2>OJUARA</h2><table width="100%"><tbody><tr><td width="50%"><p>Tapiocaria</p></td><td><p><img src="http://localhost/pedidos_dev/pedidos/mobile/mepediu_dev/../res/jqm/imgs/icons/location.png" style="height:16px;padding-right:5px;vertical-align:middle">0.14 km</p></td></tr></tbody></table></li><li data-cp_fcall="getEstabByUid(F7DC2DF7-A575-45B0-96FD-A56BFE10D75A)" class="ui-li-static ui-body-inherit ui-li-has-thumb"><img src="http://localhost/pedidos_dev/pedidos/mobile/mepediu_dev/../res/jqm/imgs/icons/sem_logo.png" style="padding:5px;height:90%"><h2>VISEU</h2><table width="100%"><tbody><tr><td width="50%"><p>Hamburgueria</p></td><td><p><img src="http://localhost/pedidos_dev/pedidos/mobile/mepediu_dev/../res/jqm/imgs/icons/location.png" style="height:16px;padding-right:5px;vertical-align:middle">0.71 km</p></td></tr></tbody></table></li><li style="opacity:0.5" onclick="toast('BRASCATTA<BR>O estabelecimento está fechado no momento.<BR>Horário de funcionamento : <BR>Quinta das 18:00 às 23:00<BR>',10000);" class="ui-li-static ui-body-inherit ui-li-has-thumb ui-last-child"><img src="http://localhost/pedidos_dev/pedidos/mobile/mepediu_dev/../res/jqm/imgs/icons/sem_logo.png" style="padding:5px;height:90%"><h2>BRASCATTA</h2><table width="100%"><tbody><tr><td width="50%"><p>Pizzaria</p></td><td><p><img src="http://localhost/pedidos_dev/pedidos/mobile/mepediu_dev/../res/jqm/imgs/icons/location.png" style="height:16px;padding-right:5px;vertical-align:middle">0.14 km</p></td></tr></tbody></table></li></ul></div>
+    </div>
+    <div data-tabs_content="tab2" class="ui-content" style="display: none;">
+        <div class="ui-btn ui-btn-a" data-cp_fcall="add_estab_por_cod">
+            Adicionar pelo código
+        </div>
+        <div id="div_lista_favs"></div>
+    </div>
+</div><div id="page_add_endereco" data-role="page" data-control-title="Adicionar Endereco" data-theme="e" data-url="page_add_endereco">
+    <div data-theme="a" data-role="header" data-position="fixed" data-tap-toggle="false">
+        <h3>
+            Adicionar Endereço
+        </h3>
+        <button class="ui-btn ui-btn-left ui-icon-carat-l ui-btn-icon-notext" data-cp_fcall="NAV.back"></button>
+    </div>
+    <div id="div_content_add_end" class="ui-content">
+        <table>
+            <tbody><tr>
+                <td>
+                    <a class="ui-btn ui-btn-b ui-corner-all" data-cp_fcall="Endereco.setAddMode(C)">
+                        Por CEP
+                    </a>
+                </td>
+                <td>
+                    <a class="ui-btn ui-btn-b ui-corner-all" data-cp_fcall="Endereco.setAddMode(L)">
+                        Redondezas
+                    </a>
+                </td>
+                <td>
+                    <a class="ui-btn ui-btn-b ui-corner-all" data-cp_fcall="Endereco.setAddMode(M)">
+                        Manual
+                    </a>
+                </td>
+            </tr>
+        </tbody></table>
+        <br>
+        <div id="div_novo_end_C">
+            <table>
+                <tbody><tr>
+                    <td style="white-space:nowrap;width:1px">
+                        Insira o CEP : 
+                    </td>
+                    <td>
+                        <input id="add_end_C_input_cep" placeholder="CEP">
+                    </td>
+                </tr>
+            </tbody></table>
+            <br>
+            <a class="ui-btn ui-btn-b ui-corner-all" data-cp_fcall="Endereco.buscarCep()">
+                Buscar
+            </a>
+        </div>
+        <div id="div_novo_end_M" style="display:none">
+            <table>
+                <tbody><tr>
+                    <td width="1%">
+                        Estado
+                        <select id="add_end_M_uf" onchange="Endereco.getCidades()">
+                            <option value=""></option><option value="AC">AC</option><option value="AL">AL</option><option value="AM">AM</option>
+                            <option value="AP">AP</option><option value="BA">BA</option><option value="CE">CE</option>
+                            <option value="DF">DF</option><option value="ES">ES</option><option value="GO">GO</option>
+                            <option value="MA">MA</option><option value="MG">MG</option><option value="MS">MS</option>
+                            <option value="MT">MT</option><option value="PA">PA</option><option value="PB">PB</option>
+                            <option value="PE">PE</option><option value="PI">PI</option><option value="PR">PR</option>
+                            <option value="RJ">RJ</option><option value="RN">RN</option><option value="RO">RO</option>
+                            <option value="RR">RR</option><option value="RS">RS</option><option value="SC">SC</option>
+                            <option value="SE">SE</option><option value="SP">SP</option><option value="TO">TO</option>
+                        </select>
+                    </td>
+                    <td>
+                        Cidade
+                        <select id="add_end_M_cidade"></select>
+                    </td>
+                </tr>
+            </tbody></table>
+            <table>
+                <tbody><tr><td width="1%">Endereço</td></tr><tr><td><input type="text" id="add_end_M_endereco" placeholder="Endereço"></td></tr>
+            </tbody></table>
+            <div class="ui-btn ui-btn-a remover_p_balcao" data-cp_fcall="Endereco.buscarManual()">
+                Buscar Endereço
+            </div>
+        </div>
+        <div id="div_novo_end_L" style="display:none">
+        </div>
+        <br>
+        <div id="div_pick_end"></div>
+    </div>
+</div>
+<div id="page_add_item" data-role="page" data-control-title="Adicionar Item" data-theme="e" data-url="page_add_item">
+    <div data-theme="a" data-role="header" id="div_header_add_item">
+        <h3>
+            Adicionar ao carrinho
+        </h3>
+        <button class="ui-btn ui-btn-left ui-icon-carat-l ui-btn-icon-notext" data-cp_fcall="NAV.back"></button>
+    </div>
+    <div id="div_foto_item" style="width:100%;min-height:150px;background-repeat: no-repeat;background-position: center; "></div>
+    <div class="ui-content" id="div_page_add_item">
+        <div class="span_add_item_nome" style="font-weight:bold;font-size:14px;margin:5px 0px 15px 0px">span_add_item_nome</div>
+        <div class="span_add_item_desc" style="margin:0px 0px 15px 0px"></div>
+        <table cellspacing="0" cellpadding="0">
+            <tbody><tr>
+                <td style="white-space: nowrap;width:99%">
+                    <div id="div_add_item_preco" style="font-weight:bold;margin:0px 0px 0px 0px">
+                        Valor unitário R$<span id="span_add_item_preco_unitario"></span>
+                    </div>
+                </td>
+                <td style="white-space: nowrap;width:1%">
+                    <table cellspacing="0" cellpadding="0">
+                        <tbody><tr>
+                            <td>
+                                <div class="div_sub_qtde" data-cp_fcall="Pedido.subQtdeCurrent"></div>
+                            </td>
+                            <td id="td_qtde_item_current" style="padding:0px 10px 0px 10px">
+                                1
+                            </td>
+                            <td>
+                                <div class="div_add_qtde" data-cp_fcall="Pedido.addQtdeCurrent"></div>
+                            </td>
+                        </tr>
+                    </tbody></table>
 
-<div id="container"></div>
+                </td>
+            </tr>
+        </tbody></table>
+        <hr>
+        <div id="div_add_item_total" style="text-align:right;font-size:18px">
+            Total: <span id="span_add_item_preco_total" class="preco"></span>
+        </div>
+        <div id="div_add_item_obs" style="padding-bottom:50px;margin-bottom:50px">
+            <textarea id="textarea_obs_item" placeholder="Observações"></textarea>
+        </div>
+        
+        <div class="bottom_btn ui-btn ui-btn-a" data-cp_fcall="Pedido.addItemCurrent">
+            Adicionar ao carrinho
+        </div>
+    </div>
+</div><div id="page_cart" data-role="page" data-control-title="Carrinho" data-theme="e" data-url="page_cart">
+    <div data-theme="a" data-role="header" data-position="fixed" data-tap-toggle="false" class="remover_p_balcao">
+        <h3>
+            Meu Pedido
+        </h3>
+        <button class="ui-btn ui-btn-left ui-icon-carat-l ui-btn-icon-notext" data-cp_fcall="NAV.back"></button>
+    </div>
+    <div class="ui-content" id="div_page_cart_content">
+        Tempo de entrega : <span id="span_cart_mins_entrega"><img src="http://localhost/pedidos_dev/pedidos/mobile/mepediu_dev/../res/jqm/imgs/icons/clock16.png"> 33-44 mins</span>
+        <div id="div_cart_itens"> Nenhum item adicionado.</div>
+        <a class="ui-btn ui-btn-b ui-corner-all" data-cp_fcall="NAV.back(page_pedido)" style="margin-bottom:50px">
+            Adicionar Mais Itens
+        </a>   
+        <div class="bottom_btn ui-btn ui-btn-a" style="display:none" data-cp_fcall="Pedido.finalizar" id="a_pedido_finalizar">
+            Escolha Forma de Pagamento
+        </div>
+        <div class="ui-widget" id="span_pedido_minimo" style="display:none;font-style:italic">
+            <div class="ui-state-highlight ui-corner-all" style="padding: 0 .7em;">
+                <p style="text-align:right">
+                    O pedido mínimo é de R$ <span id="span_preco_pedido_minimo">25,00</span>.
+                </p>
+            </div>
+        </div>
+    </div>
+</div><div id="page_complete_end" data-role="page" data-control-title="CompleteEndereço" data-theme="e" data-url="page_complete_end">
+    <div data-theme="a" data-role="header" data-position="fixed" data-tap-toggle="false">
+        <h3>
+            Complete o endereço
+        </h3>
+        <button class="ui-btn ui-btn-left ui-icon-carat-l ui-btn-icon-notext" data-cp_fcall="NAV.back"></button>
+    </div>
+    <div class="ui-content">
+        <div id="cend_popup_detalhes"></div>
+        <table style="margin-bottom:50px">
+            <tbody><tr><td width="1%">Número</td><td><input type="text" id="complete_end_numero" placeholder="Número"></td></tr>
+            <tr><td width="1%">Complemento</td><td><input type="text" id="complete_end_complemento" placeholder="Complemento"></td></tr>
+            <tr><td width="1%">Referência</td><td><input type="text" id="complete_end_referencia" placeholder="Referência"></td></tr>
+        </tbody></table>
+        <div class="bottom_btn ui-btn ui-btn-a remover_p_balcao" data-cp_fcall="Endereco.salvar()">
+            Salvar Endereço
+        </div>
+    </div>
+</div><div id="page_detalhes_pedido" data-role="page" data-control-title="Detalhes" data-theme="e" data-url="page_detalhes_pedido">
+    <div data-theme="a" data-role="header" data-position="fixed" data-tap-toggle="false">
+        <h3>
+            Detalhes do Pedido
+        </h3>
+        <button class="ui-btn ui-btn-left ui-icon-carat-l ui-btn-icon-notext" data-cp_fcall="NAV.back"></button>
+    </div>
+    <div class="ui-content" id="div_detalhes_pedido">
+    </div>
+</div>
+<div id="page_endereco" data-role="page" data-control-title="Endereco" data-theme="e" data-url="page_endereco">
+    <div data-theme="a" data-role="header" data-position="fixed" data-tap-toggle="false" class="remover_p_balcao">
+        <h3>
+            Endereço de entrega
+        </h3>
+        <button class="ui-btn ui-btn-left ui-icon-carat-l ui-btn-icon-notext" data-cp_fcall="NAV.back"></button>
+    </div>
+    <div class="ui-content">
+        <div id="div_list_ends" class="ui-content" style="margin-bottom:50px"></div>
+        <div class="bottom_btn ui-btn ui-btn-a remover_p_balcao" data-cp_fcall="goto_page_add_end">
+            Adicionar Endereço
+        </div>
+    </div>
+</div><div id="page_historico" data-role="page" data-control-title="Histórico" data-theme="e" data-url="page_historico">
+    <div data-theme="a" data-role="header" data-position="fixed" data-tap-toggle="false">
+        <h3>
+            Histórico de pedidos
+        </h3>
+        <button class="ui-btn ui-btn-left ui-icon-carat-l ui-btn-icon-notext" data-cp_fcall="NAV.back"></button>
+    </div>
+    <div class="ui-content" id="div_historico">
+    </div>
+</div><div id="page_home" data-role="page" data-control-title="Home" data-theme="e" data-url="page_home" class="page right">
+    <div data-theme="a" data-role="header" data-position="fixed" data-tap-toggle="false" id="div_page_home_header">
+        <h3>PANIFICADORA MARENGO</h3>
+        <button class="ui-btn ui-btn-left ui-icon-bars ui-btn-icon-notext"></button>
+    </div>
+    <div class="ui-content" id="div_page_home_content" style="margin-bottom:50px">
+        <div id="div_logo">
+            <img id="logo_pizzaria" style="max-width: 202px;" src="http://localhost/public_res/172257ED-7F0C-485C-A2D3-4A84F304A673/28dd5914-d3a1-1204-6904-2b6de8d2002c.png">
+            <div id="div_set_fav" style="position:relative;float:right" data-cp_fcall="toggle_fav"><img id="set_fav_icon" src="http://localhost/pedidos_dev/pedidos/mobile/mepediu_dev/../res/jqm/imgs/icons/favorite.png" style="width:32px;vertical-align:middle"><span style="padding-left:5px;text-decoration:underline">FAVORITAR</span></div>
+        </div>
+        <br>
+        <a id="a_pedido" class="ui-btn ui-btn-a ui-corner-all" data-cp_fcall="goto_page_pedido()">
+            Realizar Pedido
+        </a>   
+        <div id="div_pedido_user_estab" class="ui-bar ui-bar-d ui-corner-all" style="display:none;margin-bottom:50px"></div>
+        <div class="bottom_btn ui-btn ui-btn-a" data-cp_fcall="NAV.goto(page_promocoes)" style="display:none" id="home_promo_btn">
+            <img data-img_src="imgs/icons/promo.png?v=1" src="http://localhost/pedidos_dev/pedidos/mobile/mepediu_dev/../res/jqm/imgs/icons/promo.png?v=1">
+            Confira nossas Promoções!
+        </div>
+    </div>
+<div id="nav_panel_page_home" data-theme="e" data-role="panel" data-position="left" data-position-fixed="false" data-display="reveal"><ul data-role="listview" data-theme="e" data-divider-theme="c" style="margin-top:-16px;" class="nav-search ui-listview ui-group-theme-e"><li class="ui-li-has-icon ui-first-child"><a href="javascript:;" data-rel="close" class="ui-btn" data-icon="false"><img src="http://localhost/pedidos_dev/pedidos/mobile/mepediu_dev/../res/jqm/imgs/icons/bool_false.png" class="ui-li-icon">&nbsp;</a></li><li id="li_bemvindo" class="ui-li-static ui-body-inherit">Bem vindo visitante !</li><li data-icon="back" class="ui-li-static ui-body-inherit">&nbsp;</li><li class="ui-li-has-icon"><a href="javascript:;" data-cp_fcall="goto_novo_estab" class="ui-btn" data-icon="false"><img src="http://localhost/pedidos_dev/pedidos/mobile/mepediu_dev/../res/jqm/imgs/icons/add.png" class="ui-li-icon">Selecionar Estabelecimento</a></li><li class="opcoes_logado ui-li-has-icon" style="display:none;"><a id="a_login_sair" href="javascript:;" data-cp_fcall="cp_logout_confirmar" class="ui-btn" data-icon="false"><img src="http://localhost/pedidos_dev/pedidos/mobile/mepediu_dev/../res/jqm/imgs/icons/sign_out.png" class="ui-li-icon">Deslogar usuário</a></li><li class="opcoes_deslogado ui-li-has-icon" style="display:;"><a id="a_login_sair" href="javascript:;" data-cp_fcall="cp_login" class="ui-btn" data-icon="false"><img src="http://localhost/pedidos_dev/pedidos/mobile/mepediu_dev/../res/jqm/imgs/icons/sign_in.png" class="ui-li-icon">Fazer login</a></li><li class="opcoes_logado ui-li-has-icon ui-last-child" style="display:none;"><a href="javascript:;" data-cp_fcall="goto_historico" class="ui-btn" data-icon="false"><img src="http://localhost/pedidos_dev/pedidos/mobile/mepediu_dev/../res/jqm/imgs/icons/ger_pedidos2.png" class="ui-li-icon">Histórico de Pedidos</a></li></ul></div></div> <div id="page_lembrar_senha" data-role="page" data-control-title="LembrarSenha" data-theme="e" data-url="page_lembrar_senha">
+    <div data-theme="a" data-role="header" data-position="fixed" data-tap-toggle="false">
+        <h3>
+            Lembrar minha senha
+        </h3>
+        <button class="ui-btn ui-btn-left ui-icon-carat-l ui-btn-icon-notext" data-cp_fcall="NAV.back"></button>
+    </div>
+    <div class="ui-content">
+        Deseja receber um email, ou um sms com sua senha?
+        <a class="ui-btn ui-btn-b ui-corner-all" data-cp_fcall="goto_enviar_senha_sms">
+            Enviar minha senha por SMS
+        </a>
+        <a class="ui-btn ui-btn-b ui-corner-all" data-cp_fcall="goto_enviar_senha_email">
+            Enviar minha senha por email
+        </a>
+    </div>
+</div><div id="page_lembrar_senha_email" data-role="page" data-control-title="LembrarSenha" data-theme="e" data-url="page_lembrar_senha_email">
+    <div data-theme="a" data-role="header" data-position="fixed" data-tap-toggle="false">
+        <h3>
+            Lembrar senha por Email
+        </h3>
+        <button class="ui-btn ui-btn-left ui-icon-carat-l ui-btn-icon-notext" data-cp_fcall="NAV.back"></button>
+    </div>
+    <div class="ui-content">
+        Informe seu email : 
+        <br><br>
+        <input type="text" id="lembrar_email" placeholder="E-mail" data-wrapper-class="ui-custom">
+        <a class="ui-btn ui-btn-b ui-corner-all" data-cp_fcall="User.enviar_senha_email">
+            Enviar senha
+        </a>
+    </div>
+</div><div id="page_lembrar_senha_sms" data-role="page" data-control-title="LembrarSenha" data-theme="e" data-url="page_lembrar_senha_sms">
+    <div data-theme="a" data-role="header" data-position="fixed" data-tap-toggle="false">
+        <h3>
+            Lembrar senha por SMS
+        </h3>
+        <button class="ui-btn ui-btn-left ui-icon-carat-l ui-btn-icon-notext" data-cp_fcall="NAV.back"></button>
+    </div>
+    <div class="ui-content">
+        Digite o número do seu telefone celular
+        <br><br>
+        <table cellspacing="0" cellpadding="0">
+            <tbody><tr>
+                <td width="20%">
+                    <label for="input_nu_cel">DDD</label>
+                    <input type="number" id="lembrar_ddd" placeholder="DDD" data-wrapper-class="ui-custom">
+                </td>          
+                <td>
+                    <label for="input_nu_cel">Telefone Celular</label>
+                    <input type="number" id="lembrar_cel" placeholder="Telefone Celular" data-wrapper-class="ui-custom">
+                </td>          
+            </tr>
+        </tbody></table>
+        <a class="ui-btn ui-btn-b ui-corner-all" data-cp_fcall="User.enviar_senha_sms">
+            Enviar senha
+        </a>
+    </div>
+</div><div id="page_login" data-role="page" data-control-title="Login" data-theme="e" data-url="page_login">
+    <div data-theme="a" data-role="header" data-position="fixed" data-tap-toggle="false">
+        <h3>
+            Login do cliente
+        </h3>
+        <button class="ui-btn ui-btn-left ui-icon-carat-l ui-btn-icon-notext" data-cp_fcall="NAV.back"></button>
+    </div>
+    <div class="ui-content">
+        Por favor entre com seus dados de login
+        <input type="text" id="input_email" placeholder="E-mail">
+        <input type="text" id="input_senha" placeholder="Senha">
+        <a class="ui-btn ui-btn-b ui-corner-all" data-cp_fcall="User.login">
+            Enviar
+        </a>
+        Ainda não possui cadastro?
+        <!--
+        <a id="a_fb" class="ui-btn ui-btn-b ui-corner-all" data-cp_fcall="fb_login">
+            Entrar com facebook
+        </a><div id="fb_status"></div>
+        -->
+        <a id="a_cadastrar" class="ui-btn ui-btn-b ui-corner-all" data-cp_fcall="NAV.goto(page_newuser)">
+            Cadastrar com email
+        </a>
+        <a class="ui-btn ui-btn-b ui-corner-all" data-cp_fcall="NAV.goto(page_lembrar_senha)">
+            Esqueci minha senha
+        </a>
+    </div>
+<div id="nav_panel_page_login" data-theme="e" data-role="panel" data-position="left" data-position-fixed="false" data-display="reveal"><ul data-role="listview" data-theme="e" data-divider-theme="c" style="margin-top:-16px;" class="nav-search ui-listview ui-group-theme-e"><li class="ui-li-has-icon ui-first-child"><a href="javascript:;" data-rel="close" class="ui-btn" data-icon="false"><img src="http://localhost/pedidos_dev/pedidos/mobile/mepediu_dev/../res/jqm/imgs/icons/bool_false.png" class="ui-li-icon">&nbsp;</a></li><li id="li_bemvindo" class="ui-li-static ui-body-inherit">Bem vindo visitante !</li><li data-icon="back" class="ui-li-static ui-body-inherit">&nbsp;</li><li class="ui-li-has-icon"><a href="javascript:;" data-cp_fcall="goto_novo_estab" class="ui-btn" data-icon="false"><img src="http://localhost/pedidos_dev/pedidos/mobile/mepediu_dev/../res/jqm/imgs/icons/add.png" class="ui-li-icon">Selecionar Estabelecimento</a></li><li class="opcoes_logado ui-li-has-icon" style="display:none;"><a id="a_login_sair" href="javascript:;" data-cp_fcall="cp_logout_confirmar" class="ui-btn" data-icon="false"><img src="http://localhost/pedidos_dev/pedidos/mobile/mepediu_dev/../res/jqm/imgs/icons/sign_out.png" class="ui-li-icon">Deslogar usuário</a></li><li class="opcoes_deslogado ui-li-has-icon" style="display:;"><a id="a_login_sair" href="javascript:;" data-cp_fcall="cp_login" class="ui-btn" data-icon="false"><img src="http://localhost/pedidos_dev/pedidos/mobile/mepediu_dev/../res/jqm/imgs/icons/sign_in.png" class="ui-li-icon">Fazer login</a></li><li class="opcoes_logado ui-li-has-icon ui-last-child" style="display:none;"><a href="javascript:;" data-cp_fcall="goto_historico" class="ui-btn" data-icon="false"><img src="http://localhost/pedidos_dev/pedidos/mobile/mepediu_dev/../res/jqm/imgs/icons/ger_pedidos2.png" class="ui-li-icon">Histórico de Pedidos</a></li></ul></div></div>  <div id="page_newuser" data-role="page" data-control-title="NovoCliente" data-theme="e" data-url="page_newuser">
+    <div data-theme="a" data-role="header" data-position="fixed" data-tap-toggle="false">
+        <h3>
+            Cadastre-se
+        </h3>
+        <button class="ui-btn ui-btn-left ui-icon-carat-l ui-btn-icon-notext" data-cp_fcall="NAV.back"></button>
+    </div>
+    <div class="ui-content">
+        <label for="input_nu_nome">Nome</label>
+        <input type="text" id="input_nu_nome" placeholder="Nome" data-wrapper-class="ui-custom">
+        <table cellspacing="0" cellpadding="0">
+            <tbody><tr>
+                <td width="15%">
+                    <label for="input_nu_cel">DDD</label>
+                    <input type="number" id="input_nu_ddd" placeholder="DDD" data-wrapper-class="ui-custom">
+                </td>          
+                <td>
+                    <label for="input_nu_cel">Telefone Celular</label>
+                    <input type="number" id="input_nu_cel" placeholder="Telefone Celular" data-wrapper-class="ui-custom">
+                </td>          
+            </tr>
+        </tbody></table>
+        <label for="input_nu_email">E-mail</label>
+        <input type="text" id="input_nu_email" placeholder="E-mail" data-wrapper-class="ui-custom">
+        <label for="input_nu_senha">Senha</label>
+        <input type="password" id="input_nu_senha" placeholder="Senha" data-wrapper-class="ui-custom">
+        <label for="input_nu_senha2">Repetir a Senha</label>
+        <input type="password" id="input_nu_senha2" placeholder="Repetir a Senha" data-wrapper-class="ui-custom">  
+        <a class="ui-btn ui-btn-b ui-corner-all" data-cp_fcall="User.newuser">
+            Confirmar cadastro
+        </a>
+    </div>
+</div><div id="page_pagto" data-role="page" data-control-title="Pagamento" data-theme="e" data-url="page_pagto">
+    <div data-theme="a" data-role="header" data-position="fixed" data-tap-toggle="false" class="remover_p_balcao">
+        <h3>
+            Pagamento
+        </h3>
+        <button class="ui-btn ui-btn-left ui-icon-carat-l ui-btn-icon-notext" data-cp_fcall="NAV.back"></button>
+    </div>
+    <div class="ui-content" id="div_content_page_pagto">
+        <div style="padding-bottom: 25px">
+            <ul data-role="listview" data-theme="c" data-divider-theme="c" class="ui-listview ui-group-theme-c">
+                <li data-role="list-divider" class="remover_p_balcao ui-li-divider ui-bar-c ui-first-child" role="heading">
+                    Endereço de entrega
+                </li>
+                <li data-cp_fcall="NAV.goto(page_endereco)" class="remover_p_balcao ui-li-static ui-body-inherit">
+                    <table width="100%">
+                        <tbody>
+                            <tr>
+                                <td width="1%" style="text-align:left;min-width:35px">
+                                    <img data-img_src="imgs/icons/switch.png" src="http://localhost/pedidos_dev/pedidos/mobile/mepediu_dev/../res/jqm/imgs/icons/switch.png">
+                                </td>
+                                <td id="div_end_entrega" width="99%"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </li>
+                <li data-role="list-divider" role="heading" class="ui-li-divider ui-bar-c">
+                    Opções adicionais
+                </li>
+                <li data-cp_fcall="Pedido.selCodPromo" class="ui-li-static ui-body-inherit">
+                    <table width="100%" cellspacing="0" cellpadding="0">
+                        <tbody><tr>
+                            <td width="1%" style="text-align:left;min-width:35px">
+                                <input type="checkbox" class="cb_trigger_by_li" id="cb_voucher">
+                            </td>
+                            <td width="1%" style="text-align:left;min-width:35px;white-space:nowrap">
+                                Código promocional
+                                <span id="codigo_voucher"></span>
+                            </td>
+                            <td width="97%" style="text-align:left;">
+                            </td>
+                        </tr>
+                    </tbody></table>
+                </li>
+                <li data-cp_fcall="Pedido.selCPFnota" class="ui-li-static ui-body-inherit ui-last-child">
+                    <table width="100%" cellspacing="0" cellpadding="0">
+                        <tbody><tr>
+                            <td width="1%" style="text-align:left;min-width:35px">
+                                <input type="checkbox" class="cb_trigger_by_li" id="cb_cpf_nota">
+                            </td>
+                            <td width="1%" style="text-align:left;min-width:35px;white-space:nowrap">
+                                CPF na nota
+                                <span id="cpf_na_nota"></span>
+                            </td>
+                            <td width="97%" style="text-align:left;">
+                            </td>
+                        </tr>
+                    </tbody></table>
+                </li>
+            </ul>
+        </div>
+        <span style="font-weight:bolder" class="remover_p_balcao">
+            Total do pedido : R$ <span id="span_total_pedido_pagto"></span>
+        </span>
+        <div class="remover_p_balcao" style="padding:10px 0px 10px 0px">
+            Pagarei com
+        </div>
+        <div style="padding:10px 0px 10px 0px;margin:10px 0px 50px 0px;" id="div_formas_pagto"><ul data-role="listview" data-theme="c" data-divider-theme="c" class="ui-listview ui-group-theme-c"><li data-role="list-divider" role="heading" class="ui-li-divider ui-bar-c ui-first-child">Cartão de Crédito</li><li style="white-space : normal;" data-cp_fcall="Pedido.selFormaPagto(36)" class="ui-li-static ui-body-inherit"><table width="100%"><tbody><tr><td width="1%" style="text-align:left;min-width:35px"><input type="checkbox" id="forma_pagto_36" class="cb_trigger_by_li cb_forma_pagto"></td><td width="1%" style="text-align:left;min-width:35px"><img src="http://localhost/pedidos_dev/pedidos/mobile/mepediu_dev/../res/jqm/imgs/formas_pagto/credito/American Express.jpg" style="width:32px;height:32px"></td><td width="1%" style="text-align:left;min-width:35px;white-space:nowrap">American Express</td><td width="97%" style="text-align:left;"></td></tr></tbody></table></li><li style="white-space : normal;" data-cp_fcall="Pedido.selFormaPagto(37)" class="ui-li-static ui-body-inherit"><table width="100%"><tbody><tr><td width="1%" style="text-align:left;min-width:35px"><input type="checkbox" id="forma_pagto_37" class="cb_trigger_by_li cb_forma_pagto"></td><td width="1%" style="text-align:left;min-width:35px"><img src="http://localhost/pedidos_dev/pedidos/mobile/mepediu_dev/../res/jqm/imgs/formas_pagto/credito/Aura.jpg" style="width:32px;height:32px"></td><td width="1%" style="text-align:left;min-width:35px;white-space:nowrap">Aura</td><td width="97%" style="text-align:left;"></td></tr></tbody></table></li><li style="white-space : normal;" data-cp_fcall="Pedido.selFormaPagto(38)" class="ui-li-static ui-body-inherit"><table width="100%"><tbody><tr><td width="1%" style="text-align:left;min-width:35px"><input type="checkbox" id="forma_pagto_38" class="cb_trigger_by_li cb_forma_pagto"></td><td width="1%" style="text-align:left;min-width:35px"><img src="http://localhost/pedidos_dev/pedidos/mobile/mepediu_dev/../res/jqm/imgs/formas_pagto/credito/Avista.jpg" style="width:32px;height:32px"></td><td width="1%" style="text-align:left;min-width:35px;white-space:nowrap">Avista</td><td width="97%" style="text-align:left;"></td></tr></tbody></table></li><li style="white-space : normal;" data-cp_fcall="Pedido.selFormaPagto(39)" class="ui-li-static ui-body-inherit"><table width="100%"><tbody><tr><td width="1%" style="text-align:left;min-width:35px"><input type="checkbox" id="forma_pagto_39" class="cb_trigger_by_li cb_forma_pagto"></td><td width="1%" style="text-align:left;min-width:35px"><img src="http://localhost/pedidos_dev/pedidos/mobile/mepediu_dev/../res/jqm/imgs/formas_pagto/credito/Bandeira Mais.jpg" style="width:32px;height:32px"></td><td width="1%" style="text-align:left;min-width:35px;white-space:nowrap">Bandeira Mais</td><td width="97%" style="text-align:left;"></td></tr></tbody></table></li><li style="white-space : normal;" data-cp_fcall="Pedido.selFormaPagto(40)" class="ui-li-static ui-body-inherit"><table width="100%"><tbody><tr><td width="1%" style="text-align:left;min-width:35px"><input type="checkbox" id="forma_pagto_40" class="cb_trigger_by_li cb_forma_pagto"></td><td width="1%" style="text-align:left;min-width:35px"><img src="http://localhost/pedidos_dev/pedidos/mobile/mepediu_dev/../res/jqm/imgs/formas_pagto/credito/COOPER CARD.jpg" style="width:32px;height:32px"></td><td width="1%" style="text-align:left;min-width:35px;white-space:nowrap">COOPER CARD</td><td width="97%" style="text-align:left;"></td></tr></tbody></table></li><li style="white-space : normal;" data-cp_fcall="Pedido.selFormaPagto(41)" class="ui-li-static ui-body-inherit"><table width="100%"><tbody><tr><td width="1%" style="text-align:left;min-width:35px"><input type="checkbox" id="forma_pagto_41" class="cb_trigger_by_li cb_forma_pagto"></td><td width="1%" style="text-align:left;min-width:35px"><img src="http://localhost/pedidos_dev/pedidos/mobile/mepediu_dev/../res/jqm/imgs/formas_pagto/credito/Cabal Crédito.jpg" style="width:32px;height:32px"></td><td width="1%" style="text-align:left;min-width:35px;white-space:nowrap">Cabal Crédito</td><td width="97%" style="text-align:left;"></td></tr></tbody></table></li><li style="white-space : normal;" data-cp_fcall="Pedido.selFormaPagto(42)" class="ui-li-static ui-body-inherit"><table width="100%"><tbody><tr><td width="1%" style="text-align:left;min-width:35px"><input type="checkbox" id="forma_pagto_42" class="cb_trigger_by_li cb_forma_pagto"></td><td width="1%" style="text-align:left;min-width:35px"><img src="http://localhost/pedidos_dev/pedidos/mobile/mepediu_dev/../res/jqm/imgs/formas_pagto/credito/Diners Club International.jpg" style="width:32px;height:32px"></td><td width="1%" style="text-align:left;min-width:35px;white-space:nowrap">Diners Club International</td><td width="97%" style="text-align:left;"></td></tr></tbody></table></li><li style="white-space : normal;" data-cp_fcall="Pedido.selFormaPagto(43)" class="ui-li-static ui-body-inherit"><table width="100%"><tbody><tr><td width="1%" style="text-align:left;min-width:35px"><input type="checkbox" id="forma_pagto_43" class="cb_trigger_by_li cb_forma_pagto"></td><td width="1%" style="text-align:left;min-width:35px"><img src="http://localhost/pedidos_dev/pedidos/mobile/mepediu_dev/../res/jqm/imgs/formas_pagto/credito/Discover.jpg" style="width:32px;height:32px"></td><td width="1%" style="text-align:left;min-width:35px;white-space:nowrap">Discover</td><td width="97%" style="text-align:left;"></td></tr></tbody></table></li><li style="white-space : normal;" data-cp_fcall="Pedido.selFormaPagto(44)" class="ui-li-static ui-body-inherit"><table width="100%"><tbody><tr><td width="1%" style="text-align:left;min-width:35px"><input type="checkbox" id="forma_pagto_44" class="cb_trigger_by_li cb_forma_pagto"></td><td width="1%" style="text-align:left;min-width:35px"><img src="http://localhost/pedidos_dev/pedidos/mobile/mepediu_dev/../res/jqm/imgs/formas_pagto/credito/Hiper.jpg" style="width:32px;height:32px"></td><td width="1%" style="text-align:left;min-width:35px;white-space:nowrap">Hiper</td><td width="97%" style="text-align:left;"></td></tr></tbody></table></li><li style="white-space : normal;" data-cp_fcall="Pedido.selFormaPagto(45)" class="ui-li-static ui-body-inherit"><table width="100%"><tbody><tr><td width="1%" style="text-align:left;min-width:35px"><input type="checkbox" id="forma_pagto_45" class="cb_trigger_by_li cb_forma_pagto"></td><td width="1%" style="text-align:left;min-width:35px"><img src="http://localhost/pedidos_dev/pedidos/mobile/mepediu_dev/../res/jqm/imgs/formas_pagto/credito/Hipercard.jpg" style="width:32px;height:32px"></td><td width="1%" style="text-align:left;min-width:35px;white-space:nowrap">Hipercard</td><td width="97%" style="text-align:left;"></td></tr></tbody></table></li><li data-role="list-divider" role="heading" class="ui-li-divider ui-bar-c">Cartão de Débito</li><li style="white-space : normal;" data-cp_fcall="Pedido.selFormaPagto(52)" class="ui-li-static ui-body-inherit"><table width="100%"><tbody><tr><td width="1%" style="text-align:left;min-width:35px"><input type="checkbox" id="forma_pagto_52" class="cb_trigger_by_li cb_forma_pagto"></td><td width="1%" style="text-align:left;min-width:35px"><img src="http://localhost/pedidos_dev/pedidos/mobile/mepediu_dev/../res/jqm/imgs/formas_pagto/debito/MasterCard Débito.jpg" style="width:32px;height:32px"></td><td width="1%" style="text-align:left;min-width:35px;white-space:nowrap">MasterCard Débito</td><td width="97%" style="text-align:left;"></td></tr></tbody></table></li><li style="white-space : normal;" data-cp_fcall="Pedido.selFormaPagto(53)" class="ui-li-static ui-body-inherit"><table width="100%"><tbody><tr><td width="1%" style="text-align:left;min-width:35px"><input type="checkbox" id="forma_pagto_53" class="cb_trigger_by_li cb_forma_pagto"></td><td width="1%" style="text-align:left;min-width:35px"><img src="http://localhost/pedidos_dev/pedidos/mobile/mepediu_dev/../res/jqm/imgs/formas_pagto/debito/Sicredi Débito.jpg" style="width:32px;height:32px"></td><td width="1%" style="text-align:left;min-width:35px;white-space:nowrap">Sicredi Débito</td><td width="97%" style="text-align:left;"></td></tr></tbody></table></li><li style="white-space : normal;" data-cp_fcall="Pedido.selFormaPagto(54)" class="ui-li-static ui-body-inherit"><table width="100%"><tbody><tr><td width="1%" style="text-align:left;min-width:35px"><input type="checkbox" id="forma_pagto_54" class="cb_trigger_by_li cb_forma_pagto"></td><td width="1%" style="text-align:left;min-width:35px"><img src="http://localhost/pedidos_dev/pedidos/mobile/mepediu_dev/../res/jqm/imgs/formas_pagto/debito/Visa Electron.jpg" style="width:32px;height:32px"></td><td width="1%" style="text-align:left;min-width:35px;white-space:nowrap">Visa Electron</td><td width="97%" style="text-align:left;"></td></tr></tbody></table></li><li data-role="list-divider" role="heading" class="ui-li-divider ui-bar-c">Vale</li><li style="white-space : normal;" data-cp_fcall="Pedido.selFormaPagto(57)" class="ui-li-static ui-body-inherit"><table width="100%"><tbody><tr><td width="1%" style="text-align:left;min-width:35px"><input type="checkbox" id="forma_pagto_57" class="cb_trigger_by_li cb_forma_pagto"></td><td width="1%" style="text-align:left;min-width:35px"><img src="http://localhost/pedidos_dev/pedidos/mobile/mepediu_dev/../res/jqm/imgs/formas_pagto/vale/Cabal Vale.jpg" style="width:32px;height:32px"></td><td width="1%" style="text-align:left;min-width:35px;white-space:nowrap">Cabal Vale</td><td width="97%" style="text-align:left;"></td></tr></tbody></table></li><li style="white-space : normal;" data-cp_fcall="Pedido.selFormaPagto(58)" class="ui-li-static ui-body-inherit"><table width="100%"><tbody><tr><td width="1%" style="text-align:left;min-width:35px"><input type="checkbox" id="forma_pagto_58" class="cb_trigger_by_li cb_forma_pagto"></td><td width="1%" style="text-align:left;min-width:35px"><img src="http://localhost/pedidos_dev/pedidos/mobile/mepediu_dev/../res/jqm/imgs/formas_pagto/vale/Cooper card.jpg" style="width:32px;height:32px"></td><td width="1%" style="text-align:left;min-width:35px;white-space:nowrap">Cooper card</td><td width="97%" style="text-align:left;"></td></tr></tbody></table></li><li style="white-space : normal;" data-cp_fcall="Pedido.selFormaPagto(60)" class="ui-li-static ui-body-inherit"><table width="100%"><tbody><tr><td width="1%" style="text-align:left;min-width:35px"><input type="checkbox" id="forma_pagto_60" class="cb_trigger_by_li cb_forma_pagto"></td><td width="1%" style="text-align:left;min-width:35px"><img src="http://localhost/pedidos_dev/pedidos/mobile/mepediu_dev/../res/jqm/imgs/formas_pagto/vale/Nutricash.jpg" style="width:32px;height:32px"></td><td width="1%" style="text-align:left;min-width:35px;white-space:nowrap">Nutricash</td><td width="97%" style="text-align:left;"></td></tr></tbody></table></li><li style="white-space : normal;" data-cp_fcall="Pedido.selFormaPagto(61)" class="ui-li-static ui-body-inherit"><table width="100%"><tbody><tr><td width="1%" style="text-align:left;min-width:35px"><input type="checkbox" id="forma_pagto_61" class="cb_trigger_by_li cb_forma_pagto"></td><td width="1%" style="text-align:left;min-width:35px"><img src="http://localhost/pedidos_dev/pedidos/mobile/mepediu_dev/../res/jqm/imgs/formas_pagto/vale/Planvale.jpg" style="width:32px;height:32px"></td><td width="1%" style="text-align:left;min-width:35px;white-space:nowrap">Planvale</td><td width="97%" style="text-align:left;"></td></tr></tbody></table></li><li style="white-space : normal;" data-cp_fcall="Pedido.selFormaPagto(62)" class="ui-li-static ui-body-inherit"><table width="100%"><tbody><tr><td width="1%" style="text-align:left;min-width:35px"><input type="checkbox" id="forma_pagto_62" class="cb_trigger_by_li cb_forma_pagto"></td><td width="1%" style="text-align:left;min-width:35px"><img src="http://localhost/pedidos_dev/pedidos/mobile/mepediu_dev/../res/jqm/imgs/formas_pagto/vale/Sodexo.jpg" style="width:32px;height:32px"></td><td width="1%" style="text-align:left;min-width:35px;white-space:nowrap">Sodexo</td><td width="97%" style="text-align:left;"></td></tr></tbody></table></li><li style="white-space : normal;" data-cp_fcall="Pedido.selFormaPagto(63)" class="ui-li-static ui-body-inherit"><table width="100%"><tbody><tr><td width="1%" style="text-align:left;min-width:35px"><input type="checkbox" id="forma_pagto_63" class="cb_trigger_by_li cb_forma_pagto"></td><td width="1%" style="text-align:left;min-width:35px"><img src="http://localhost/pedidos_dev/pedidos/mobile/mepediu_dev/../res/jqm/imgs/formas_pagto/vale/Sorocred.jpg" style="width:32px;height:32px"></td><td width="1%" style="text-align:left;min-width:35px;white-space:nowrap">Sorocred</td><td width="97%" style="text-align:left;"></td></tr></tbody></table></li><li style="white-space : normal;" data-cp_fcall="Pedido.selFormaPagto(64)" class="ui-li-static ui-body-inherit"><table width="100%"><tbody><tr><td width="1%" style="text-align:left;min-width:35px"><input type="checkbox" id="forma_pagto_64" class="cb_trigger_by_li cb_forma_pagto"></td><td width="1%" style="text-align:left;min-width:35px"><img src="http://localhost/pedidos_dev/pedidos/mobile/mepediu_dev/../res/jqm/imgs/formas_pagto/vale/Ticket.jpg" style="width:32px;height:32px"></td><td width="1%" style="text-align:left;min-width:35px;white-space:nowrap">Ticket</td><td width="97%" style="text-align:left;"></td></tr></tbody></table></li><li style="white-space : normal;" data-cp_fcall="Pedido.selFormaPagto(65)" class="ui-li-static ui-body-inherit"><table width="100%"><tbody><tr><td width="1%" style="text-align:left;min-width:35px"><input type="checkbox" id="forma_pagto_65" class="cb_trigger_by_li cb_forma_pagto"></td><td width="1%" style="text-align:left;min-width:35px"><img src="http://localhost/pedidos_dev/pedidos/mobile/mepediu_dev/../res/jqm/imgs/formas_pagto/vale/VB Beneficios (Valefacil).jpg" style="width:32px;height:32px"></td><td width="1%" style="text-align:left;min-width:35px;white-space:nowrap">VB Beneficios (Valefacil)</td><td width="97%" style="text-align:left;"></td></tr></tbody></table></li><li data-role="list-divider" role="heading" class="ui-li-divider ui-bar-c">Outros</li><li style="white-space : normal;" data-cp_fcall="Pedido.selFormaPagto(55)" class="ui-li-static ui-body-inherit ui-last-child"><table width="100%"><tbody><tr><td width="1%" style="text-align:left;min-width:35px"><input type="checkbox" id="forma_pagto_55" class="cb_trigger_by_li cb_forma_pagto"></td><td width="1%" style="text-align:left;min-width:35px"><img src="http://localhost/pedidos_dev/pedidos/mobile/mepediu_dev/../res/jqm/imgs/formas_pagto/outros/Dinheiro.jpg" style="width:32px;height:32px"></td><td width="1%" style="text-align:left;min-width:35px;white-space:nowrap">Dinheiro<span id="span_troco" style="padding-left:5px"></span></td><td width="97%" style="text-align:left;"></td></tr></tbody></table></li></ul></div>
+        <div class="bottom_btn ui-btn ui-btn-a remover_p_balcao" data-cp_fcall="Pedido.enviar">
+            Enviar pedido
+        </div>
+    </div>
+</div><div id="page_pedido" data-role="page" data-control-title="Pedido" data-theme="e" data-url="page_pedido">
+    <div data-theme="a" data-role="header" data-position="fixed" data-tap-toggle="false" class="remover_p_balcao">
+        <h3>
+            Cardápio
+        </h3>
+        <button class="ui-btn ui-btn-left ui-icon-carat-l ui-btn-icon-notext" data-cp_fcall="NAV.back"></button>
+    </div>
+    <div class="ui-content" id="div_page_pedido_content">
+        <span class="remover_p_balcao">Adicionar ao seu pedido : <br></span>
+        <div id="div_cardapios"><a id="pedido_add_33" class="ui-btn ui-btn-b ui-corner-all btn_pedido_add" data-idcardapioset="2" data-cp_fcall="Pedido.openCardapio(33)">Pizza 1</a><a id="pedido_add_34" class="ui-btn ui-btn-b ui-corner-all btn_pedido_add" data-idcardapioset="2" data-cp_fcall="Pedido.openCardapio(34)">Pizza doce</a><a id="pedido_add_41" class="ui-btn ui-btn-b ui-corner-all btn_pedido_add" data-idcardapioset="2" data-cp_fcall="Pedido.openCardapio(41)">Bebidas</a><a id="pedido_add_42" class="ui-btn ui-btn-b ui-corner-all btn_pedido_add" data-idcardapioset="2" data-cp_fcall="Pedido.openCardapio(42)">Hamburguers</a><a id="pedido_add_35" class="ui-btn ui-btn-b ui-corner-all btn_pedido_add" data-idcardapioset="2" data-cp_fcall="Pedido.openCardapio(35)">Tábua de frios</a><a id="pedido_add_36" class="ui-btn ui-btn-b ui-corner-all btn_pedido_add" data-idcardapioset="2" data-cp_fcall="Pedido.openCardapio(36)">Tábua de queijos</a><a id="pedido_add_37" class="ui-btn ui-btn-b ui-corner-all btn_pedido_add" data-idcardapioset="2" data-cp_fcall="Pedido.openCardapio(37)">Salgados</a><a id="pedido_add_38" class="ui-btn ui-btn-b ui-corner-all btn_pedido_add" data-idcardapioset="2" data-cp_fcall="Pedido.openCardapio(38)">Kit Festa</a><a id="pedido_add_39" class="ui-btn ui-btn-b ui-corner-all btn_pedido_add" data-idcardapioset="2" data-cp_fcall="Pedido.openCardapio(39)">Doces</a><br><br><br><br><br></div>
+        <div class="div_msg_pedido_add" id="msg_item_add">
+            Item adicionado ao pedido
+        </div>
+        <img class="cart" data-img_src="imgs/icons/cart64.png" style="display:none" id="cart" data-cp_fcall="NAV.goto(page_cart)" src="http://localhost/pedidos_dev/pedidos/mobile/mepediu_dev/../res/jqm/imgs/icons/cart64.png">
+        <img class="cart" data-img_src="imgs/icons/cart64off.png" style="display:" id="cart_off" data-cp_fcall="toast(Adicione itens ao seu pedido!)" src="http://localhost/pedidos_dev/pedidos/mobile/mepediu_dev/../res/jqm/imgs/icons/cart64off.png">
+    </div>
+</div><div id="page_pizza" data-role="page" data-control-title="Pizza" data-theme="e" data-url="page_pizza">
+    <div data-theme="a" data-role="header" data-position="fixed" data-tap-toggle="false">
+        <h3>
+            Pizza
+        </h3>
+        <button class="ui-btn ui-btn-left ui-icon-carat-l ui-btn-icon-notext" data-cp_fcall="NAV.back"></button>
+    </div>
+    <div class="ui-content" id="div_content_pizza">
+        <div id="ph_tamanhos" style="display:inline-block"><div style="margin-left:10px;">Escolha o tamanho</div><div class="div_pizza_option"><img class="img_pizza_option img_tamanhos_pizza" data-img_src="imgs/tamanhos/X.png" data-tamanho="X" data-cp_fcall="Pizza.setTamanhoPizza(X)" src="http://localhost/pedidos_dev/pedidos/mobile/mepediu_dev/../res/jqm/imgs/tamanhos/X.png"><div style="text-align:center">Grande</div></div><div class="div_pizza_option"><img class="img_pizza_option img_tamanhos_pizza" data-img_src="imgs/tamanhos/G.png" data-tamanho="G" data-cp_fcall="Pizza.setTamanhoPizza(G)" src="http://localhost/pedidos_dev/pedidos/mobile/mepediu_dev/../res/jqm/imgs/tamanhos/G.png"><div style="text-align:center">Média</div></div><div class="div_pizza_option"><img class="img_pizza_option img_tamanhos_pizza" data-img_src="imgs/tamanhos/P.png" data-tamanho="P" data-cp_fcall="Pizza.setTamanhoPizza(P)" src="http://localhost/pedidos_dev/pedidos/mobile/mepediu_dev/../res/jqm/imgs/tamanhos/P.png"><div style="text-align:center">Brotinho</div></div></div>
+        <hr>
+        <div style="display:inline-block">
+            <div style="margin-left:10px;">Quer uma pizza de quantos sabores?</div>
+            <div class="div_pizza_option">
+                <img class="img_pizza_option img_sabores_pizza" data-img_src="imgs/pizzas/big_1.png" data-num_sabores="1" data-cp_fcall="Pizza.setNumSabores(1)" src="http://localhost/pedidos_dev/pedidos/mobile/mepediu_dev/../res/jqm/imgs/pizzas/big_1.png">
+                <div style="text-align:center">Inteira</div>
+            </div>
+            <div class="div_pizza_option">
+                <img class="img_pizza_option img_sabores_pizza" data-img_src="imgs/pizzas/big_2.png" data-num_sabores="2" data-cp_fcall="Pizza.setNumSabores(2)" src="http://localhost/pedidos_dev/pedidos/mobile/mepediu_dev/../res/jqm/imgs/pizzas/big_2.png">
+                <div style="text-align:center">Meio-a-meio</div>
+            </div>
+            <div class="div_pizza_option" id="div_3sabores">
+                <img class="img_pizza_option img_sabores_pizza" data-img_src="imgs/pizzas/big_3.png" data-num_sabores="3" data-cp_fcall="Pizza.setNumSabores(3)" src="http://localhost/pedidos_dev/pedidos/mobile/mepediu_dev/../res/jqm/imgs/pizzas/big_3.png">
+                <div style="text-align:center">3 sabores</div>
+            </div>
+        </div>
+        <hr>
+        <div style="display:inline-block">
+            <a id="btn_sabor_1" class="ui-btn ui-btn-b ui-corner-all btn_sabor" style="display:none" data-num_sabor="1" data-cp_fcall="Pizza.gotoPageSabor(1)">
+                Escolha o 1° sabor
+            </a>
+            <a id="btn_sabor_2" class="ui-btn ui-btn-b ui-corner-all btn_sabor" style="display:none" data-num_sabor="2" data-cp_fcall="Pizza.gotoPageSabor(2)">
+                Escolha o 2° sabor
+            </a>
+            <a id="btn_sabor_3" class="ui-btn ui-btn-b ui-corner-all btn_sabor" style="display:none" data-num_sabor="3" data-cp_fcall="Pizza.gotoPageSabor(3)">
+                Escolha o 3° sabor
+            </a>
+        </div>
+        <hr id="hr_massas" style="">
+        <div style="display:inline-block" id="ph_massas"><div style="margin-left:10px;">Escolha a massa</div><div class="div_pizza_option"><img class="img_pizza_option img_massas_pizza" data-img_src="imgs/massas/media.png" data-idmassa="8" data-cp_fcall="Pizza.setMassaPizza(8)" src="http://localhost/pedidos_dev/pedidos/mobile/mepediu_dev/../res/jqm/imgs/massas/media.png"><div style="text-align:center">Média</div></div></div>
+        <hr id="hr_bordas_cortes">
+        <table cellspacing="0" cellpadding="0" width="100%" id="table_bordas_cortes"><tbody><tr>
+                <td style="vertical-align: top; display: none;" width="50%" id="td_bordas"><!-- table servindo como master container, se livrar qdo possivel -->
+
+                    <table cellspacing="0" cellpadding="0" width="100%">
+                        <tbody><tr>
+                            <td colspan="2" style="text-align:center" id="tr_label_borda">
+                                <div id="div_label_borda">
+                                    Escolha a borda
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width="49%" style="vertical-align:top" id="td_opcao_1_borda">
+                                <div class="div_pizza_option">
+                                    <img class="img_pizza_option img_borda_pizza" data-img_src="imgs/pizzas/borda_normal.png" data-borda="normal" data-cp_fcall="Pizza.setBorda(normal)" src="http://localhost/pedidos_dev/pedidos/mobile/mepediu_dev/../res/jqm/imgs/pizzas/borda_normal.png">
+                                    <div style="text-align:center">Normal</div>
+                                </div>
+                            </td>
+                            <td width="49%" style="vertical-align:top" id="td_opcao_2_borda">
+                                <div class="div_pizza_option">
+                                    <img class="img_pizza_option img_borda_pizza" data-img_src="imgs/pizzas/borda_recheada.png" data-borda="recheada" data-cp_fcall="Pizza.setBorda(recheada)" src="http://localhost/pedidos_dev/pedidos/mobile/mepediu_dev/../res/jqm/imgs/pizzas/borda_recheada.png">
+                                    <div style="text-align:center" id="div_nome_borda_recheada">Recheada</div>
+                                </div>
+                            </td>
+                            <td width="1%" id="td_blank_borda"></td>
+                        </tr>
+                    </tbody></table>
+                </td>
+                <td style="vertical-align: top; border-left-width: 0px;" width="50%" id="td_cortes">
+
+                    <table cellspacing="0" cellpadding="0" width="100%">
+                        <tbody><tr>
+                            <td colspan="2" style="text-align: left;" id="tr_label_corte">
+                                <div id="div_label_corte" style="margin-left: 10px;">
+                                    Escolha o Corte
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width="49%" style="vertical-align: top; width: 1%;" id="td_opcao_1_corte">
+                                <div class="div_pizza_option">
+                                    <img class="img_pizza_option img_corte_pizza" data-img_src="imgs/pedacos.png" data-corte="pedacos" data-cp_fcall="Pizza.setCorte(pedacos)" src="http://localhost/pedidos_dev/pedidos/mobile/mepediu_dev/../res/jqm/imgs/pedacos.png">
+                                    <div style="text-align:center">Pedaços</div>
+                                </div>
+                            </td>
+                            <td width="49%" style="vertical-align: top; width: 1%;" id="td_opcao_2_corte">
+                                <div class="div_pizza_option">
+                                    <img class="img_pizza_option img_corte_pizza" data-img_src="imgs/aperitivo.png" data-corte="aperitivo" data-cp_fcall="Pizza.setCorte(aperitivo)" src="http://localhost/pedidos_dev/pedidos/mobile/mepediu_dev/../res/jqm/imgs/aperitivo.png">
+                                    <div style="text-align:center">Aperitivo</div>
+                                </div>
+                            </td>
+                            <td width="1%" id="td_blank_corte" style="width: 98%;"></td>
+                        </tr>
+                    </tbody></table>
+
+                </td>
+            </tr>
+        </tbody></table>
+        <hr>
+        Observações :
+        <textarea id="pizza_obs" rows="3" cols="5" placeholder="Escreva aqui"></textarea>
+        <hr>
+        <div style="padding:5px;margin:5px;">
+            <a id="btn_concluir_pizza" class="ui-btn ui-btn-b ui-corner-all btn_concluir_pizza" data-cp_fcall="Pizza.concluirPizza">
+                Concluir pizza
+            </a>
+        </div>
+    </div>
+</div>
+<div id="page_sabor" data-role="page" data-control-title="sabor" data-theme="e" data-url="page_sabor">
+    <img class="img_icon_voltar" data-img_src="imgs/icons/ss_back_off.png" data-cp_fcall="NAV.back" src="http://localhost/pedidos_dev/pedidos/mobile/mepediu_dev/../res/jqm/imgs/icons/ss_back_off.png">
+    Sabor
+    <hr>
+<ul id="ul_sabor" data-role="listview" data-filter="false" data-filter-placeholder="Filtrar sabores" data-theme="c" data-divider-theme="c" class="ui-listview ui-group-theme-c"><li style="opacity:0.5" data-cp_fcall="Pedido.alertSaborIndisponivel()" class="ui-li-static ui-body-inherit ui-first-child"><span style="font-weight:bold">2 Queijos</span><br>Mussarela e Catupiry<div class="div_preco div_preco_g">R$ 28,00</div><div class="div_preco div_preco_x">R$ 34,00</div><div class="div_preco div_preco_p">R$ 22,00</div></li><li style="opacity:0.5" data-cp_fcall="Pedido.alertSaborIndisponivel()" class="ui-li-static ui-body-inherit"><span style="font-weight:bold">Catupiry</span><br>Catupiry e orégano<div class="div_preco div_preco_g">R$ 27,00</div><div class="div_preco div_preco_x">R$ 32,40</div><div class="div_preco div_preco_p">R$ 33,75</div></li><li data-role="list-divider" role="heading" class="ui-li-divider ui-bar-c">Calabresa</li><li data-cp_fcall="Pizza.pickSabor(362)" class="ui-li-static ui-body-inherit"><span style="font-weight:bold">Baiana</span><br>Calabresa moída levemente apimentada e cebola<div class="div_preco div_preco_g">R$ 10,00</div><div class="div_preco div_preco_x">R$ 12,00</div><div class="div_preco div_preco_p">R$ 12,50</div></li><li data-cp_fcall="Pizza.pickSabor(360)" class="ui-li-static ui-body-inherit"><span style="font-weight:bold">Calabresa</span><br>Calabresa e cebola<div class="div_preco div_preco_g">R$ 15,00</div><div class="div_preco div_preco_x">R$ 18,00</div><div class="div_preco div_preco_p">R$ 18,75</div></li><li data-cp_fcall="Pizza.pickSabor(361)" class="ui-li-static ui-body-inherit"><span style="font-weight:bold">Toscana</span><br>Calabresa coberta com mussarela<div class="div_preco div_preco_g">R$ 17,00</div><div class="div_preco div_preco_x">R$ 20,40</div><div class="div_preco div_preco_p">R$ 21,25</div></li><li data-role="list-divider" role="heading" class="ui-li-divider ui-bar-c">Do Mar</li><li data-cp_fcall="Pizza.pickSabor(364)" class="ui-li-static ui-body-inherit"><span style="font-weight:bold">Aliche</span><br>Mussarela e aliche<div class="div_preco div_preco_g">R$ 28,00</div><div class="div_preco div_preco_x">R$ 33,60</div><div class="div_preco div_preco_p">R$ 35,00</div></li><li data-cp_fcall="Pizza.pickSabor(363)" class="ui-li-static ui-body-inherit ui-last-child"><span style="font-weight:bold">Atum</span><br>Atum, azeitonas pretas e cebola<div class="div_preco div_preco_g">R$ 35,00</div><div class="div_preco div_preco_x">R$ 42,00</div><div class="div_preco div_preco_p">R$ 43,75</div></li></ul></div>
+<div id="page_bordas" data-role="page" data-control-title="borda" data-theme="e" data-url="page_bordas">
+    <img class="img_icon_voltar" data-img_src="imgs/icons/ss_back_off.png" data-cp_fcall="NAV.back" src="http://localhost/pedidos_dev/pedidos/mobile/mepediu_dev/../res/jqm/imgs/icons/ss_back_off.png">
+    Borda
+    <hr>
+    <div class="ui-content" id="div_page_bordas_content">
+        Escolha o recheio da borda : 
+        <p>
+    </p></div>
+</div><div id="page_promocoes" data-role="page" data-control-title="Histórico" data-theme="e" data-url="page_promocoes">
+    <div data-theme="a" data-role="header" data-position="fixed" data-tap-toggle="false">
+        <h3>
+            Promoções
+        </h3>
+        <button class="ui-btn ui-btn-left ui-icon-carat-l ui-btn-icon-notext" data-cp_fcall="NAV.back"></button>
+    </div>
+    <div class="ui-content" id="div_promocoes">
+    </div>
+</div><div id="page_sel_search_origin" data-role="page" data-control-title="SelSearchOrigin" data-theme="e" data-url="page_sel_search_origin">
+    <div data-theme="a" data-role="header" data-position="fixed" data-tap-toggle="false" class="remover_p_balcao">
+        <h3>
+            Selecione local de busca
+        </h3>
+        <button class="ui-btn ui-btn-left ui-icon-carat-l ui-btn-icon-notext" data-cp_fcall="NAV.back"></button>
+    </div>
+    <div class="ui-content">
+        <div class="ui-btn ui-btn-a remover_p_balcao" data-cp_fcall="setSearchEstabOrigin()">
+            Estabelecimentos perto de mim
+        </div>
+        <div class="ui-btn ui-btn-a remover_p_balcao" data-cp_fcall="setSearchEstabOrigin(add)">
+            Adicionar endereço para pesquisa
+        </div>
+        <h3 id="h3_title_origin_ends">
+            Últimos endereços utilizados :
+        </h3>
+        <div id="div_search_origin_list_ends" style="margin-bottom:50px"></div>
+    </div>
+</div>
+<div id="page_cardapio_34" data-role="page" data-control-title="page_cardapio_34" data-theme="e" class="page_cards"><div data-theme="a" data-role="header" data-position="fixed" data-tap-toggle="false"><h3>Pizza doce</h3><button class="ui-btn ui-btn-left ui-icon-carat-l ui-btn-icon-notext" data-cp_fcall="NAV.back"></button></div><div class="ui-content"><ul data-role="listview" data-filter="false" data-filter-placeholder="Filtrar itens" data-theme="c" data-divider-theme="c" class="ui-listview ui-group-theme-c"><li style="white-space : normal;" data-cp_fcall="Pedido.addItemCardapio(365)" class="ui-li-static ui-body-inherit ui-first-child"><span style="font-weight:bold">Chocolate Preto</span><br><div class="div_preco">R$ 46,00</div></li><li style="white-space : normal;" data-cp_fcall="Pedido.addItemCardapio(366)" class="ui-li-static ui-body-inherit"><span style="font-weight:bold">Chocolate com Morangos</span><br><div class="div_preco">R$ 16,00</div></li><li style="white-space : normal;" data-cp_fcall="Pedido.addItemCardapio(367)" class="ui-li-static ui-body-inherit ui-last-child"><span style="font-weight:bold">Sensação</span><br><div class="div_preco">R$ 40,00</div></li></ul></div></div><div id="page_cardapio_41" data-role="page" data-control-title="page_cardapio_41" data-theme="e" class="page_cards"><div data-theme="a" data-role="header" data-position="fixed" data-tap-toggle="false"><h3>Bebidas</h3><button class="ui-btn ui-btn-left ui-icon-carat-l ui-btn-icon-notext" data-cp_fcall="NAV.back"></button></div><div class="ui-content"><ul data-role="listview" data-filter="false" data-filter-placeholder="Filtrar itens" data-theme="c" data-divider-theme="c" class="ui-listview ui-group-theme-c"><li style="white-space : normal;" data-cp_fcall="Pedido.addItemCardapio(143)" class="ui-li-static ui-body-inherit ui-first-child"><span style="font-weight:bold">09987 - COCA-COLA 1,25ML</span><br><div class="div_preco">R$ 2,40</div></li><li data-role="list-divider" role="heading" class="ui-li-divider ui-bar-c">Refrigerantes</li><li style="white-space : normal;" data-cp_fcall="Pedido.addItemCardapio(145)" class="ui-li-static ui-body-inherit"><span style="font-weight:bold">COCA-COLA 500ML</span><br><div class="div_preco">R$ 2,50</div></li><li style="white-space : normal;" data-cp_fcall="Pedido.addItemCardapio(147)" class="ui-li-static ui-body-inherit"><span style="font-weight:bold">COCA-COLA KS 290ML</span><br><div class="div_preco">R$ 1,70</div></li><li style="white-space : normal;" data-cp_fcall="Pedido.addItemCardapio(149)" class="ui-li-static ui-body-inherit"><span style="font-weight:bold">COCA-COLA LATA 355ML</span><br><div class="div_preco">R$ 2,00</div></li><li style="white-space : normal;" data-cp_fcall="Pedido.addItemCardapio(151)" class="ui-li-static ui-body-inherit"><span style="font-weight:bold">COCA-COLA PET2</span><br><div class="div_preco">R$ 4,70</div></li><li style="white-space : normal;" data-cp_fcall="Pedido.addItemCardapio(153)" class="ui-li-static ui-body-inherit"><span style="font-weight:bold">COCA-COLA ZERO 500ML</span><br><div class="div_preco">R$ 2,50</div></li><li style="white-space : normal;" data-cp_fcall="Pedido.addItemCardapio(155)" class="ui-li-static ui-body-inherit"><span style="font-weight:bold">COCA-COLA ZERO KS 290ML</span><br><div class="div_preco">R$ 1,70</div></li><li style="white-space : normal;" data-cp_fcall="Pedido.addItemCardapio(157)" class="ui-li-static ui-body-inherit"><span style="font-weight:bold">COCA-COLA ZERO LATA 355ML</span><br><div class="div_preco">R$ 2,20</div></li><li style="white-space : normal;" data-cp_fcall="Pedido.addItemCardapio(159)" class="ui-li-static ui-body-inherit"><span style="font-weight:bold">COCA-COLA ZERO PET2</span><br><div class="div_preco">R$ 4,90</div></li><li style="white-space : normal;" data-cp_fcall="Pedido.addItemCardapio(137)" class="ui-li-static ui-body-inherit"><span style="font-weight:bold">Coca-Cola 2 litros</span><br><div class="div_preco">R$ 8,00</div></li><li style="white-space : normal;" data-cp_fcall="Pedido.addItemCardapio(161)" class="ui-li-static ui-body-inherit"><span style="font-weight:bold">DEL-REY CITRUS PET2</span><br><div class="div_preco">R$ 2,50</div></li><li style="white-space : normal;" data-cp_fcall="Pedido.addItemCardapio(163)" class="ui-li-static ui-body-inherit"><span style="font-weight:bold">DEL-REY COLA PET2</span><br><div class="div_preco">R$ 2,50</div></li><li style="white-space : normal;" data-cp_fcall="Pedido.addItemCardapio(167)" class="ui-li-static ui-body-inherit"><span style="font-weight:bold">DEL-REY GUARANA PET2</span><br><div class="div_preco">R$ 2,50</div></li><li style="white-space : normal;" data-cp_fcall="Pedido.addItemCardapio(169)" class="ui-li-static ui-body-inherit"><span style="font-weight:bold">DEL-REY LARANJA PET2</span><br><div class="div_preco">R$ 2,50</div></li><li style="white-space : normal;" data-cp_fcall="Pedido.addItemCardapio(171)" class="ui-li-static ui-body-inherit"><span style="font-weight:bold">DEL-REY LIMAO PET2</span><br><div class="div_preco">R$ 2,50</div></li><li style="white-space : normal;" data-cp_fcall="Pedido.addItemCardapio(173)" class="ui-li-static ui-body-inherit"><span style="font-weight:bold">DEL-REY TANG PET2</span><br><div class="div_preco">R$ 2,50</div></li><li style="white-space : normal;" data-cp_fcall="Pedido.addItemCardapio(175)" class="ui-li-static ui-body-inherit"><span style="font-weight:bold">DEL-REY UVA PET2</span><br><div class="div_preco">R$ 2,00</div></li><li style="white-space : normal;" data-cp_fcall="Pedido.addItemCardapio(177)" class="ui-li-static ui-body-inherit"><span style="font-weight:bold">FANTA LARANJA 1,25ML</span><br><div class="div_preco">R$ 2,40</div></li><li style="white-space : normal;" data-cp_fcall="Pedido.addItemCardapio(178)" class="ui-li-static ui-body-inherit"><span style="font-weight:bold">FANTA LARANJA 500ML</span><br><div class="div_preco">R$ 2,30</div></li><li style="white-space : normal;" data-cp_fcall="Pedido.addItemCardapio(180)" class="ui-li-static ui-body-inherit"><span style="font-weight:bold">FANTA LARANJA KS 290ML</span><br><div class="div_preco">R$ 1,70</div></li><li style="white-space : normal;" data-cp_fcall="Pedido.addItemCardapio(182)" class="ui-li-static ui-body-inherit"><span style="font-weight:bold">FANTA LARANJA LATA 355ML</span><br><div class="div_preco">R$ 2,00</div></li><li style="white-space : normal;" data-cp_fcall="Pedido.addItemCardapio(184)" class="ui-li-static ui-body-inherit"><span style="font-weight:bold">FANTA LARANJA PET2</span><br><div class="div_preco">R$ 4,10</div></li><li style="white-space : normal;" data-cp_fcall="Pedido.addItemCardapio(187)" class="ui-li-static ui-body-inherit"><span style="font-weight:bold">FANTA UVA 500ML</span><br><div class="div_preco">R$ 2,30</div></li><li style="white-space : normal;" data-cp_fcall="Pedido.addItemCardapio(189)" class="ui-li-static ui-body-inherit"><span style="font-weight:bold">FANTA UVA KS 290ML</span><br><div class="div_preco">R$ 1,70</div></li><li style="white-space : normal;" data-cp_fcall="Pedido.addItemCardapio(191)" class="ui-li-static ui-body-inherit"><span style="font-weight:bold">FANTA UVA LATA 355ML</span><br><div class="div_preco">R$ 2,00</div></li><li style="white-space : normal;" data-cp_fcall="Pedido.addItemCardapio(193)" class="ui-li-static ui-body-inherit"><span style="font-weight:bold">FANTA UVA PET2</span><br><div class="div_preco">R$ 4,10</div></li><li style="white-space : normal;" data-cp_fcall="Pedido.addItemCardapio(138)" class="ui-li-static ui-body-inherit"><span style="font-weight:bold">Fanta Uva 1.5 litros</span><br><div class="div_preco">R$ 7,00</div></li><li style="white-space : normal;" data-cp_fcall="Pedido.addItemCardapio(196)" class="ui-li-static ui-body-inherit"><span style="font-weight:bold">GUARANA ANTARTICA 600ML</span><br><div class="div_preco">R$ 2,20</div></li><li style="white-space : normal;" data-cp_fcall="Pedido.addItemCardapio(199)" class="ui-li-static ui-body-inherit"><span style="font-weight:bold">GUARANA ANTARTICA CAÇULINHA</span><br><div class="div_preco">R$ 1,00</div></li><li style="white-space : normal;" data-cp_fcall="Pedido.addItemCardapio(198)" class="ui-li-static ui-body-inherit"><span style="font-weight:bold">GUARANA ANTARTICA KS 290ML</span><br><div class="div_preco">R$ 0,82</div></li><li style="white-space : normal;" data-cp_fcall="Pedido.addItemCardapio(201)" class="ui-li-static ui-body-inherit"><span style="font-weight:bold">GUARANA ANTARTICA LATA 355ML</span><br><div class="div_preco">R$ 1,50</div></li><li style="white-space : normal;" data-cp_fcall="Pedido.addItemCardapio(203)" class="ui-li-static ui-body-inherit"><span style="font-weight:bold">GUARANA ANTARTICA PET2</span><br><div class="div_preco">R$ 3,60</div></li><li style="white-space : normal;" data-cp_fcall="Pedido.addItemCardapio(205)" class="ui-li-static ui-body-inherit"><span style="font-weight:bold">GUARANA ANTARTICA ZERO LATA 355ML</span><br><div class="div_preco">R$ 1,50</div></li><li style="white-space : normal;" data-cp_fcall="Pedido.addItemCardapio(207)" class="ui-li-static ui-body-inherit"><span style="font-weight:bold">GUARANA ANTARTICA ZERO PET2</span><br><div class="div_preco">R$ 3,60</div></li><li style="white-space : normal;" data-cp_fcall="Pedido.addItemCardapio(194)" class="ui-li-static ui-body-inherit"><span style="font-weight:bold">GUARAPAN KS 290ML</span><br><div class="div_preco">R$ 0,83</div></li><li style="white-space : normal;" data-cp_fcall="Pedido.addItemCardapio(209)" class="ui-li-static ui-body-inherit"><span style="font-weight:bold">GUARAPAN KS 290ML</span><br><div class="div_preco">R$ 0,83</div></li><li style="white-space : normal;" data-cp_fcall="Pedido.addItemCardapio(211)" class="ui-li-static ui-body-inherit"><span style="font-weight:bold">GUARAPAN PET2</span><br><div class="div_preco">R$ 3,30</div></li><li style="white-space : normal;" data-cp_fcall="Pedido.addItemCardapio(213)" class="ui-li-static ui-body-inherit"><span style="font-weight:bold">KUAT 500ML</span><br><div class="div_preco">R$ 2,00</div></li><li style="white-space : normal;" data-cp_fcall="Pedido.addItemCardapio(215)" class="ui-li-static ui-body-inherit"><span style="font-weight:bold">KUAT KS 290ML</span><br><div class="div_preco">R$ 0,75</div></li><li style="white-space : normal;" data-cp_fcall="Pedido.addItemCardapio(217)" class="ui-li-static ui-body-inherit"><span style="font-weight:bold">KUAT LATA 355ML</span><br><div class="div_preco">R$ 1,50</div></li><li style="white-space : normal;" data-cp_fcall="Pedido.addItemCardapio(219)" class="ui-li-static ui-body-inherit"><span style="font-weight:bold">KUAT PET2</span><br><div class="div_preco">R$ 3,60</div></li><li style="white-space : normal;" data-cp_fcall="Pedido.addItemCardapio(224)" class="ui-li-static ui-body-inherit"><span style="font-weight:bold">PEPSI CAÇULINHA</span><br><div class="div_preco">R$ 1,00</div></li><li style="white-space : normal;" data-cp_fcall="Pedido.addItemCardapio(225)" class="ui-li-static ui-body-inherit"><span style="font-weight:bold">PEPSI KS</span><br><div class="div_preco">R$ 0,83</div></li><li style="white-space : normal;" data-cp_fcall="Pedido.addItemCardapio(227)" class="ui-li-static ui-body-inherit"><span style="font-weight:bold">PEPSI LATA 355ML</span><br><div class="div_preco">R$ 1,50</div></li><li style="white-space : normal;" data-cp_fcall="Pedido.addItemCardapio(229)" class="ui-li-static ui-body-inherit"><span style="font-weight:bold">PEPSI PET2</span><br><div class="div_preco">R$ 3,45</div></li><li style="white-space : normal;" data-cp_fcall="Pedido.addItemCardapio(139)" class="ui-li-static ui-body-inherit"><span style="font-weight:bold">Pepsi 2 litros</span><br><div class="div_preco">R$ 8,00</div></li><li style="white-space : normal;" data-cp_fcall="Pedido.addItemCardapio(231)" class="ui-li-static ui-body-inherit"><span style="font-weight:bold">SCHIN GUARANA PET 2LT</span><br><div class="div_preco">R$ 2,00</div></li><li style="white-space : normal;" data-cp_fcall="Pedido.addItemCardapio(233)" class="ui-li-static ui-body-inherit"><span style="font-weight:bold">SCHIN ITUBAINA PET 2LT</span><br><div class="div_preco">R$ 2,00</div></li><li style="white-space : normal;" data-cp_fcall="Pedido.addItemCardapio(235)" class="ui-li-static ui-body-inherit"><span style="font-weight:bold">SCHIN LARANJA PET 2LT</span><br><div class="div_preco">R$ 2,00</div></li><li style="white-space : normal;" data-cp_fcall="Pedido.addItemCardapio(237)" class="ui-li-static ui-body-inherit"><span style="font-weight:bold">SCHIN LIMÃO PET 2LT</span><br><div class="div_preco">R$ 2,00</div></li><li style="white-space : normal;" data-cp_fcall="Pedido.addItemCardapio(239)" class="ui-li-static ui-body-inherit"><span style="font-weight:bold">SCHIN MAÇA PET 2LT</span><br><div class="div_preco">R$ 2,00</div></li><li style="white-space : normal;" data-cp_fcall="Pedido.addItemCardapio(241)" class="ui-li-static ui-body-inherit"><span style="font-weight:bold">SCHIN UVA PET 2LT</span><br><div class="div_preco">R$ 2,30</div></li><li style="white-space : normal;" data-cp_fcall="Pedido.addItemCardapio(243)" class="ui-li-static ui-body-inherit"><span style="font-weight:bold">SODA CAÇULINHA</span><br><div class="div_preco">R$ 1,00</div></li><li style="white-space : normal;" data-cp_fcall="Pedido.addItemCardapio(245)" class="ui-li-static ui-body-inherit"><span style="font-weight:bold">SODA LIMONADA LATA</span><br><div class="div_preco">R$ 0,00</div></li><li style="white-space : normal;" data-cp_fcall="Pedido.addItemCardapio(246)" class="ui-li-static ui-body-inherit"><span style="font-weight:bold">SPRITE 500ML</span><br><div class="div_preco">R$ 2,00</div></li><li style="white-space : normal;" data-cp_fcall="Pedido.addItemCardapio(248)" class="ui-li-static ui-body-inherit"><span style="font-weight:bold">SPRITE KS 290ML</span><br><div class="div_preco">R$ 1,20</div></li><li style="white-space : normal;" data-cp_fcall="Pedido.addItemCardapio(250)" class="ui-li-static ui-body-inherit"><span style="font-weight:bold">SPRITE LATA 355ML</span><br><div class="div_preco">R$ 1,50</div></li><li style="white-space : normal;" data-cp_fcall="Pedido.addItemCardapio(252)" class="ui-li-static ui-body-inherit"><span style="font-weight:bold">SPRITE LATA ZERO 355ML</span><br><div class="div_preco">R$ 1,50</div></li><li style="white-space : normal;" data-cp_fcall="Pedido.addItemCardapio(254)" class="ui-li-static ui-body-inherit"><span style="font-weight:bold">SPRITE PET2</span><br><div class="div_preco">R$ 3,60</div></li><li style="white-space : normal;" data-cp_fcall="Pedido.addItemCardapio(256)" class="ui-li-static ui-body-inherit"><span style="font-weight:bold">SPRITE ZERO 500ML</span><br><div class="div_preco">R$ 2,00</div></li><li style="white-space : normal;" data-cp_fcall="Pedido.addItemCardapio(258)" class="ui-li-static ui-body-inherit"><span style="font-weight:bold">SPRITE ZERO KS 290ML</span><br><div class="div_preco">R$ 1,20</div></li><li style="white-space : normal;" data-cp_fcall="Pedido.addItemCardapio(260)" class="ui-li-static ui-body-inherit"><span style="font-weight:bold">SPRITE ZERO PET2</span><br><div class="div_preco">R$ 3,45</div></li><li style="white-space : normal;" data-cp_fcall="Pedido.addItemCardapio(262)" class="ui-li-static ui-body-inherit"><span style="font-weight:bold">SUKITA CAÇULINHA 237ML</span><br><div class="div_preco">R$ 1,00</div></li><li style="white-space : normal;" data-cp_fcall="Pedido.addItemCardapio(263)" class="ui-li-static ui-body-inherit"><span style="font-weight:bold">SUKITA KS 290ML</span><br><div class="div_preco">R$ 1,20</div></li><li style="white-space : normal;" data-cp_fcall="Pedido.addItemCardapio(265)" class="ui-li-static ui-body-inherit"><span style="font-weight:bold">SUKITA LARANJA LATA</span><br><div class="div_preco">R$ 1,50</div></li><li style="white-space : normal;" data-cp_fcall="Pedido.addItemCardapio(267)" class="ui-li-static ui-body-inherit"><span style="font-weight:bold">SUKITA PET 2LT</span><br><div class="div_preco">R$ 3,20</div></li><li style="white-space : normal;" data-cp_fcall="Pedido.addItemCardapio(268)" class="ui-li-static ui-body-inherit"><span style="font-weight:bold">SUKITA UVA PET 2LT</span><br><div class="div_preco">R$ 3,20</div></li><li data-role="list-divider" role="heading" class="ui-li-divider ui-bar-c">Cervejas</li><li style="white-space : normal;" data-cp_fcall="Pedido.addItemCardapio(136)" class="ui-li-static ui-body-inherit"><span style="font-weight:bold">Itaipava 350ml</span><br><div class="div_preco">R$ 3,25</div></li><li style="white-space : normal;" data-cp_fcall="Pedido.addItemCardapio(135)" class="ui-li-static ui-body-inherit"><span style="font-weight:bold">Kaiser 350ml</span><br><div class="div_preco">R$ 3,00</div></li><li style="white-space : normal;" data-cp_fcall="Pedido.addItemCardapio(134)" class="ui-li-static ui-body-inherit"><span style="font-weight:bold">Skol 350ml</span><br><div class="div_preco">R$ 3,50</div></li><li data-role="list-divider" role="heading" class="ui-li-divider ui-bar-c">Outras</li><li style="white-space : normal;" data-cp_fcall="Pedido.addItemCardapio(223)" class="ui-li-static ui-body-inherit"><span style="font-weight:bold">MATE COURO PET 2LT</span><br><div class="div_preco">R$ 3,20</div></li><li style="white-space : normal;" data-cp_fcall="Pedido.addItemCardapio(142)" class="ui-li-static ui-body-inherit"><span style="font-weight:bold">Suco de laranja Del Valle 300ml</span><br><div class="div_preco">R$ 4,00</div></li><li style="white-space : normal;" data-cp_fcall="Pedido.addItemCardapio(140)" class="ui-li-static ui-body-inherit ui-last-child"><span style="font-weight:bold">Água 300ml</span><br><div class="div_preco">R$ 4,00</div></li></ul></div></div><div id="page_cardapio_42" data-role="page" data-control-title="page_cardapio_42" data-theme="e" class="page_cards"><div data-theme="a" data-role="header" data-position="fixed" data-tap-toggle="false"><h3>Hamburguers</h3><button class="ui-btn ui-btn-left ui-icon-carat-l ui-btn-icon-notext" data-cp_fcall="NAV.back"></button></div><div class="ui-content"><ul data-role="listview" data-filter="false" data-filter-placeholder="Filtrar itens" data-theme="c" data-divider-theme="c" class="ui-listview ui-group-theme-c"><li style="white-space : normal;" data-cp_fcall="Pedido.addItemCardapio(384)" class="ui-li-static ui-body-inherit ui-first-child"><span style="font-weight:bold">Hamburguer de Calabresa</span><br><div class="div_preco">R$ 13,90</div></li><li style="white-space : normal;" data-cp_fcall="Pedido.addItemCardapio(382)" class="ui-li-static ui-body-inherit"><span style="font-weight:bold">Hamburguer</span><br><div class="div_preco">R$ 11,90</div></li><li style="white-space : normal;" data-cp_fcall="Pedido.addItemCardapio(383)" class="ui-li-static ui-body-inherit ui-last-child"><span style="font-weight:bold">Hamburguer de Picanha</span><br><div class="div_preco">R$ 16,90</div></li></ul></div></div><div id="page_cardapio_35" data-role="page" data-control-title="page_cardapio_35" data-theme="e" class="page_cards"><div data-theme="a" data-role="header" data-position="fixed" data-tap-toggle="false"><h3>Tábua de frios</h3><button class="ui-btn ui-btn-left ui-icon-carat-l ui-btn-icon-notext" data-cp_fcall="NAV.back"></button></div><div class="ui-content"><ul data-role="listview" data-filter="false" data-filter-placeholder="Filtrar itens" data-theme="c" data-divider-theme="c" class="ui-listview ui-group-theme-c"><li style="white-space : normal;" data-cp_fcall="Pedido.addItemCardapio(368)" class="ui-li-static ui-body-inherit ui-first-child"><span style="font-weight:bold">Blanquete de Peru</span><br><div class="div_preco">R$ 20,00</div></li><li style="white-space : normal;" data-cp_fcall="Pedido.addItemCardapio(370)" class="ui-li-static ui-body-inherit"><span style="font-weight:bold">Copa</span><br><div class="div_preco">R$ 23,00</div></li><li style="white-space : normal;" data-cp_fcall="Pedido.addItemCardapio(369)" class="ui-li-static ui-body-inherit ui-last-child"><span style="font-weight:bold">Pastrame</span><br><div class="div_preco">R$ 40,00</div></li></ul></div></div><div id="page_cardapio_36" data-role="page" data-control-title="page_cardapio_36" data-theme="e" class="page_cards"><div data-theme="a" data-role="header" data-position="fixed" data-tap-toggle="false"><h3>Tábua de queijos</h3><button class="ui-btn ui-btn-left ui-icon-carat-l ui-btn-icon-notext" data-cp_fcall="NAV.back"></button></div><div class="ui-content"><ul data-role="listview" data-filter="false" data-filter-placeholder="Filtrar itens" data-theme="c" data-divider-theme="c" class="ui-listview ui-group-theme-c"><li style="white-space : normal;" data-cp_fcall="Pedido.addItemCardapio(373)" class="ui-li-static ui-body-inherit ui-first-child"><span style="font-weight:bold">Edan</span><br><div class="div_preco">R$ 22,00</div></li><li style="white-space : normal;" data-cp_fcall="Pedido.addItemCardapio(371)" class="ui-li-static ui-body-inherit"><span style="font-weight:bold">Estepe</span><br><div class="div_preco">R$ 9,00</div></li><li style="white-space : normal;" data-cp_fcall="Pedido.addItemCardapio(372)" class="ui-li-static ui-body-inherit ui-last-child"><span style="font-weight:bold">Provolone</span><br><div class="div_preco">R$ 16,00</div></li></ul></div></div><div id="page_cardapio_37" data-role="page" data-control-title="page_cardapio_37" data-theme="e" class="page_cards"><div data-theme="a" data-role="header" data-position="fixed" data-tap-toggle="false"><h3>Salgados</h3><button class="ui-btn ui-btn-left ui-icon-carat-l ui-btn-icon-notext" data-cp_fcall="NAV.back"></button></div><div class="ui-content"><ul data-role="listview" data-filter="false" data-filter-placeholder="Filtrar itens" data-theme="c" data-divider-theme="c" class="ui-listview ui-group-theme-c"><li style="white-space : normal;" data-cp_fcall="Pedido.addItemCardapio(374)" class="ui-li-static ui-body-inherit ui-first-child"><span style="font-weight:bold">Coxinha</span><br><div class="div_preco">R$ 47,00</div></li><li style="white-space : normal;" data-cp_fcall="Pedido.addItemCardapio(375)" class="ui-li-static ui-body-inherit"><span style="font-weight:bold">Kibinho</span><br><div class="div_preco">R$ 48,00</div></li><li style="white-space : normal;" data-cp_fcall="Pedido.addItemCardapio(376)" class="ui-li-static ui-body-inherit ui-last-child"><span style="font-weight:bold">Risoles</span><br><div class="div_preco">R$ 40,00</div></li></ul></div></div><div id="page_cardapio_38" data-role="page" data-control-title="page_cardapio_38" data-theme="e" class="page_cards"><div data-theme="a" data-role="header" data-position="fixed" data-tap-toggle="false"><h3>Kit Festa</h3><button class="ui-btn ui-btn-left ui-icon-carat-l ui-btn-icon-notext" data-cp_fcall="NAV.back"></button></div><div class="ui-content"><ul data-role="listview" data-filter="false" data-filter-placeholder="Filtrar itens" data-theme="c" data-divider-theme="c" class="ui-listview ui-group-theme-c"><li style="white-space : normal;" data-cp_fcall="Pedido.addItemCardapio(377)" class="ui-li-static ui-body-inherit ui-first-child"><span style="font-weight:bold">Número 1- P/20 Pessoas</span><br>1 bolo de 2kg, 200 salgadinhos, 100 docinhos<div class="div_preco">R$ 39,00</div></li><li style="white-space : normal;" data-cp_fcall="Pedido.addItemCardapio(378)" class="ui-li-static ui-body-inherit ui-last-child"><span style="font-weight:bold">Número 2- P/30 Pessoas</span><br>1 bolo de 3kg, 300 salgadinhos, 150 docinhos<div class="div_preco">R$ 40,00</div></li></ul></div></div><div id="page_cardapio_39" data-role="page" data-control-title="page_cardapio_39" data-theme="e" class="page_cards"><div data-theme="a" data-role="header" data-position="fixed" data-tap-toggle="false"><h3>Doces</h3><button class="ui-btn ui-btn-left ui-icon-carat-l ui-btn-icon-notext" data-cp_fcall="NAV.back"></button></div><div class="ui-content"><ul data-role="listview" data-filter="false" data-filter-placeholder="Filtrar itens" data-theme="c" data-divider-theme="c" class="ui-listview ui-group-theme-c"><li data-role="list-divider" role="heading" class="ui-li-divider ui-bar-c ui-first-child">Bombas</li><li style="white-space : normal;" data-cp_fcall="Pedido.addItemCardapio(379)" class="ui-li-static ui-body-inherit"><span style="font-weight:bold">Bomba Mala</span><br><div class="div_preco">R$ 18,00</div></li><li style="white-space : normal;" data-cp_fcall="Pedido.addItemCardapio(380)" class="ui-li-static ui-body-inherit"><span style="font-weight:bold">Chocolate</span><br><div class="div_preco">R$ 45,00</div></li><li style="white-space : normal;" data-cp_fcall="Pedido.addItemCardapio(381)" class="ui-li-static ui-body-inherit ui-last-child"><span style="font-weight:bold">Creme</span><br><div class="div_preco">R$ 27,00</div></li></ul></div></div><div class="ui-loader ui-corner-all ui-body-b ui-loader-verbose"><span class="ui-icon-loading"></span><h1>Aguarde</h1></div></body>
 
 <script src="lib/cordova-2.5.0.js"></script>
 <script src="lib/fastclick.js"></script>
 <script src="lib/jquery-1.9.1.min.js"></script>
 <script src="pageslider.js"></script>
 <script src="app.js"></script>
-
 </body>
 </html>
